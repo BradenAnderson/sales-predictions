@@ -32,19 +32,21 @@
 
 ### Project Goals
 
-
 > 
->1) Explore the BigMart sales data set for underlying patterns, interesting relationships, and inconsistent or missing information. 
+>1) Explore the BigMart sales data set uncover patterns, interesting relationships, and inconsistent or missing information. 
 >2) Prepare for model building by ensuring all missing information has been handled appropriately, and all categorical information has
 >   been properly encoded.
->3) Build machine learning models that can accurately predict the sales of various products across each of their 10 store locations.
+>3) Build machine learning models that can accurately predict the sales of various products across each of BigMarts 10 store locations.
 >4) Derive insight from the models to answer questions such as "which of the input features have the greatest impact on sales?"
+>
+In the sections that follow I will explain how each component of this project worked to address the goals listed above, as well as the approach taken to do so. With that said, I hope you choose to open each notebook and follow along as you read through this document. There is a significant amount of inline explanation that takes place through the codes comments that simply cannot be fully reproduced here. 
 
 ***
 ***
 
 ###### [Data Cleaning](#data-cleaning)
 The code for this section can be found in the file named 01_Sales_Predictions_Data_Cleaning.ipynb
+
 
 ***
 
