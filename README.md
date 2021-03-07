@@ -34,7 +34,7 @@
 ***
 ***
 
-###### Data Cleaning
+###### Data Cleaning(#data-cleaning)
 The code for this section can be found in the file named 01_Sales_Predictions_Data_Cleaning.ipynb
 
 ***
