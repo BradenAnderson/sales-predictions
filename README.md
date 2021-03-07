@@ -45,12 +45,16 @@ In the sections that follow I will explain how each component of this project wo
 ***
 
 ###### [Data Cleaning](#data-cleaning)
+
 The code for this section can be found in the file named 01_Sales_Predictions_Data_Cleaning.ipynb
+
+This notebook takes as an input a csv file that contains the BigMart sales dataset. The csv file is read into a pandas DataFrame, which is then used to explore and gain familiarity with the various features and observations the dataset contains. Early exploration steps involve viewing the data types of each feature, checking for duplicated records, and reviewing the various categories within each feature to see if observations were consistently recorded. As a quick aside, this project exclusively used the built in Pandas library functions for the early data exploration steps, however much of this can be easily automated using the Pandas Profiling library, which if interested can be found [here](https://github.com/pandas-profiling/pandas-profiling). Next, the records that contain missing values were viewed in two different ways, first by performing Pandas DataFrame filtering and second by creating visualizations using the python library missingno. This review of missing values showed that 2 of the 11 features contained missing information, 'Outlet Size' and 'Item Weight'. Additionally, we gained some insight by noticing that these missing values did not appear to be entirely random, as the majority of the missing weight values came from the earliest year in the dataset, 1985 (maybe they didn't have scales back then?). This could be indicative of an error in the data collection or aggregation process, therefore in a real scenario this is the point where the data scientist should pause and reach out to the subject matter expert or individual who supplied the data to see if there is a way to obtain the correct information. In this situation I assumed the correct values could not be obtained and proceeded to fill in the missing information with the help of Scikit-Learns Simpleimputer. The missing weight values were filled in using the average item weight value, and the missing outlet size values were flagged by filling in a value of "missing". 
 
 
 ***
 
 ###### [Exploratory Data Analysis](#exploratory-data-analysis)
+
 The code for this section can be found in the file named 02_Sales_Predictions_EDA.ipynb
 
 ***
@@ -77,9 +81,9 @@ The code for this section has not yet been uploaded.
 
 ##### [Project References](#project-references) 
 
-This project would not have been possible without the help of numerous online resources that provided guidance, background knowledge, and helped answered questions that came up along the way. I made a great effort to keep tracking of these resources and have provided a list of links below. Thank you to everyone who was involved in creating and sharing this information. 
+This project would not have been possible without the help of numerous online resources that provided guidance, background knowledge, and helped answered questions that came up along the way. I made a great effort to keep track of these resources and have provided a list of links below. Thank you to everyone who was involved in creating and sharing this information. 
 
-In addition to online resources, below I list several awesome books that I kept close by throughout the process of working on this project. Each of these books has been the key that helped fill in a knowledge gap and pushed me passed an issue I was stuck on at one point or another, and so I'd like to say thank you to the authors and all those involved in creating and sharing this material. 
+In addition to online resources, below I also list several awesome books that I kept close by throughout the process of working on this project. Each of these books has been the key that helped fill in a knowledge gap and push me passed an issue at one point or another. Thank you to the authors and all those involved in creating and sharing this material. 
 
 **Textbook Resources:** 
 1. Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow by Aurelien Geron
