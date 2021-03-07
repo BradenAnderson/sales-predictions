@@ -33,7 +33,7 @@
 ### Project Goals
 
 > 
->1) Explore the BigMart sales data set uncover patterns, interesting relationships, and inconsistent or missing information. 
+>1) Explore the BigMart sales dataset to uncover patterns, interesting relationships, and inconsistent or missing information. 
 >2) Prepare for model building by ensuring all missing information has been handled appropriately, and all categorical information has
 >   been properly encoded.
 >3) Build machine learning models that can accurately predict the sales of various products across each of BigMarts 10 store locations.
