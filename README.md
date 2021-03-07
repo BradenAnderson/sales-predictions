@@ -23,13 +23,22 @@
 
 ### Background Information
 
-> Background information
+> This project was inspired by the Big Mart Sales competition put on by Analytics Vidhya. The full problem statement
+> can be viewed on the competition page [here](https://datahack.analyticsvidhya.com/contest/practice-problem-big-mart-sales-iii/#LeaderBoard).
+> 
+> 
 
 ***
 
-### Project Goal
+### Project Goals
 
-> Project goal
+
+> 
+>1) Explore the BigMart sales data set for underlying patterns, interesting relationships, and inconsistent or missing information. 
+>2) Prepare for model building by ensuring all missing information has been handled appropriately, and all categorical information has
+>   been properly encoded.
+>3) Build machine learning models that can accurately predict the sales of various products across each of their 10 store locations.
+>4) Derive insight from the models to answer questions such as "which of the input features have the greatest impact on sales?"
 
 ***
 ***
