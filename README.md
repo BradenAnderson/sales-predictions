@@ -120,6 +120,21 @@ The test datasets were saved for future use, Sales_Test_Data_Cleaned_TrainImpute
 ##### [Interpretable Models](#interpretable-models) 
 The code for this section can be found in the file named 05_Interpretable_Modeling.ipynb
 
+Often times there is a trade-off between model complexity and interpretability. If prediction accuracy is the only goal, then it may be true that a complex model that obfuscates the details of exactly how each input feature contributes the observed output is the best tool for the job. In this notebook, we prioritize interpretability and build some linear models where nice equations can be generated that directly link input features to weighted coefficients describing their relative importance to the calculated output. 
+
+We once again consult our dear friend, GridSearch. Two difference sets of linear models are calculated, the difference between them being in set 1 the outlet location type and outlet type features were chosen to be encoded was nominal categorical variables. In set 2, we encoded the outlet location type and outlet type features as ordinal categorical variables. 
+
+For both sets of models the model type was varied between linear regression, lasso regression and ridge regression. Models were considered both with and without fitting the y-intercept, as well as both with and without transforming the target vector using a box-cox transform. Additionally, models were built using everywhere from 5-all the input features. 
+
+The resulting best model in set 1 was a Linear Regression model that incorporated 16 model features and had a calculated RMSE of 1103.81. The equation relating the input features to the sales price is shown below:  
+
+Sales = 0.01270*(x0_Fruits and Vegetables) +  0.08816*(x1_OUT017) +  0.56196*(x1_OUT018) +  -0.6845*(x1_OUT019) +  0.98404*(x1_OUT027) +  0.11462*(x1_OUT035) +  -0.2990*(x1_OUT049) +  -0.0383*(x2_Tier 2) +  -0.7043*(x2_Tier 3) +  0.94062*(x3_Supermarket Type1) +  0.56196*(x3_Supermarket Type2) +  0.98404*(x3_Supermarket Type3) +  0.01272*(x4_Food) +  0.35044*(Outlet_Size) +  -0.0573*(2 years) +  0.00885*(4 years) 
+
+The best model in the second set was also a Linear Regression model, this time with 13 features used, and an RMSE of again 1103.81. 
+The equation relating the input features to the sales price is shown below: 
+
+Sales = 0.01270*(x0_Fruits and Vegetables) + 0.08816*(x1_OUT017) + -1.6986*(x1_OUT018) + -0.0570*(x1_OUT019) + -2.4226*(x1_OUT027) + 0.11462*(x1_OUT035) + 0.01475*(x1_OUT049) + 0.01272*(x2_Food) + 0.03666*(Outlet_Size) + -0.0383*(Outlet_Location_Type) + 1.56817*(Outlet_Type) + -0.0573*(2 years) + 0.00885*(4 years) 
+
 ***
 
 ##### [Tuning Hyperparameters](#tuning-hyperparameters) 
