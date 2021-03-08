@@ -44,9 +44,9 @@ In the sections that follow I will explain how each component of this project wo
 ***
 ***
 
-###### [Data Cleaning](#data-cleaning)
+##### [Data Cleaning](#data-cleaning)
 
-The code for this section can be found in the file named 01_Sales_Predictions_Data_Cleaning.ipynb
+>The code for this section can be found in the file named 01_Sales_Predictions_Data_Cleaning.ipynb
 
 This notebook takes as an input a csv file that contains the BigMart sales dataset. The csv file is read into a pandas DataFrame, which is then used to explore and gain familiarity with the various features and observations the dataset contains. Early exploration steps involve viewing the data types of each feature, checking for duplicated records, and reviewing the various categories within each feature to see if observations were consistently recorded. As a quick aside, this project exclusively used the built in Pandas library functions for the early data exploration steps, however much of this can be easily automated using the Pandas Profiling library, which if interested can be found [here](https://github.com/pandas-profiling/pandas-profiling). Our initial exploration revealed that the item fat content feature did contain some inconsistently recorded observations. For example, 'LF', 'low fat', and 'Low Fat' were three different inputs that intended to indicate the same thing. Since this input structure variability would lead to inaccurate category encodings that could mislead our machine learning models, all inputs were made consistent prior to proceeding. Next, the records that contained missing values were viewed in two different ways, first by performing Pandas DataFrame filtering and second by creating visualizations using the python library missingno. This review of missing values showed that 2 of the 11 features contained missing information, 'Outlet Size' and 'Item Weight'. Additionally, we gained some insight by noticing that these missing values did not appear to be entirely random, as the majority of the missing weight values came from the earliest year in the dataset, 1985 (maybe they didn't have scales back then?). This could be indicative of an error in the data collection or aggregation process, therefore in a real scenario this is the point where the data scientist should pause and reach out to the subject matter expert or individual who supplied the data to see if there is a way to obtain the correct information. In this situation I assumed the correct values could not be obtained and proceeded to fill in the missing information with the help of Scikit-Learns Simpleimputer. The missing weight values were filled in using the average item weight value, and the missing outlet size values were flagged by filling in a value of "missing". 
 
@@ -55,7 +55,7 @@ The result of the work outlined above is a "clean" Pandas DataFrame that is free
 
 ***
 
-###### [Exploratory Data Analysis](#exploratory-data-analysis)
+##### [Exploratory Data Analysis](#exploratory-data-analysis)
 
 The code for this section can be found in the file named 02_Sales_Predictions_EDA.ipynb
 
@@ -70,24 +70,24 @@ Some key take-aways from the exploratory data analysis steps are as follows:
 
 ***
 
-###### [Modeling Part 1](#modeling-part-1)
+##### [Modeling Part 1](#modeling-part-1)
 The code for this section can be found in the file named 03_Modeling_Part_1.ipynb
 
 Despite the concerns acknowleged above, in this notebook the decision is made to proceed onwards and begin creating models without further adjustments to the dataset. The rationale behind this decision is that even if we ultimately revisit and reperform data cleaning prior to final model creation, that the cross validation metrics calcuated on the models trained using this dataset will be valuable as a benchmark to compare future models to. 
 
 ***
 
-###### [Feature Engineering and Modeling Part 2](#feature-engineering-and-modeling-part-2) 
+##### [Feature Engineering and Modeling Part 2](#feature-engineering-and-modeling-part-2) 
 The code for this section can be found in the file named 04_Feature_Engineering_and_Modeling_Pt2.ipynb
 
 ***
 
-###### [Interpretable Models](#interpretable-models) 
+##### [Interpretable Models](#interpretable-models) 
 The code for this section can be found in the file named 05_Interpretable_Modeling.ipynb
 
 ***
 
-###### [Tuning Hyperparameters](#tuning-hyperparameters) 
+##### [Tuning Hyperparameters](#tuning-hyperparameters) 
 The code for this section has not yet been uploaded.
 
 ***
